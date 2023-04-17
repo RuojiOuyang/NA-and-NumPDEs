@@ -1,0 +1,26 @@
+[
+    {
+        "Method": "AdamsBashforth",
+        "Order": 1,
+        "T": 17.06521656015796,
+        "StepNum": 24000,
+        "Initial":[0.994 , 0 , 0 , 0 , -2.0015851063790825224 , 0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "ClassicalRK",
+        "T": 17.06521656015796,
+        "StepNum": 6000,
+        "Initial":[0.994 , 0 , 0 , 0 , -2.0015851063790825224 , 0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "DormandPrince",
+        "T": 17.06521656015796,
+        "TimeStep": 1e-1,
+        "AbsErr": 1e-5,
+        "RelErr": 1e-5,
+        "Initial": [0.994 , 0 , 0 , 0 , -2.0015851063790825224 , 0],
+        "RHS": "ThreeBody"
+    }
+]

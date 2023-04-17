@@ -1,0 +1,17 @@
+[
+    {
+        "Method": "AdamsBashforth",
+        "Order": 1,
+        "T": 17.06521656015796,
+        "StepNum": 240000,
+        "Initial":[0.994 , 0 , 0 , 0 , -2.0015851063790825224 , 0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "ClassicalRK",
+        "T": 17.06521656015796,
+        "StepNum": 60000,
+        "Initial":[0.994 , 0 , 0 , 0 , -2.0015851063790825224 , 0],
+        "RHS": "ThreeBody"
+    }
+]

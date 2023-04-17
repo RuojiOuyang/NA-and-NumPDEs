@@ -1,0 +1,34 @@
+[
+    {
+        "Method": "GaussLegendre",
+        "Order": 1,
+        "T": 19.14045706162071,
+        "TimeStep": 0.3e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "GaussLegendre",
+        "Order": 1,
+        "T": 19.14045706162071,
+        "TimeStep": 0.24e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "GaussLegendre",
+        "Order": 1,
+        "T": 19.14045706162071,
+        "TimeStep": 0.192e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "GaussLegendre",
+        "Order": 1,
+        "T": 19.14045706162071,
+        "TimeStep": 0.1536e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    }
+]

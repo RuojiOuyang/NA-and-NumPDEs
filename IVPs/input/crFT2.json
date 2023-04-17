@@ -1,0 +1,38 @@
+[
+    {
+        "Method": "Fehlberg",
+        "T": 19.14045706162071,
+        "TimeStep": 1e-5,
+        "AbsErr": 1e-5,
+        "RelErr": 1e-5,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "Fehlberg",
+        "T": 19.14045706162071,
+        "TimeStep": 0.5e-5,
+        "AbsErr": 0.5e-5,
+        "RelErr": 0.5e-5,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "Fehlberg",
+        "T": 19.14045706162071,
+        "TimeStep": 0.25e-5,
+        "AbsErr": 0.25e-5,
+        "RelErr": 0.25e-5,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "Fehlberg",
+        "T": 19.14045706162071,
+        "TimeStep": 0.125e-5,
+        "AbsErr": 0.125e-5,
+        "RelErr": 0.125e-5,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    }
+]

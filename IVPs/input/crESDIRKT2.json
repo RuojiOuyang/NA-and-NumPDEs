@@ -1,0 +1,30 @@
+[
+    {
+        "Method": "ESDIRK",
+        "T": 19.14045706162071,
+        "TimeStep": 1.7e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "ESDIRK",
+        "T": 19.14045706162071,
+        "TimeStep": 1.6e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "ESDIRK",
+        "T": 19.14045706162071,
+        "TimeStep": 1.024e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    },
+    {
+        "Method": "ESDIRK",
+        "T": 19.14045706162071,
+        "TimeStep": 0.9e-1,
+        "Initial":[0.87978,0,0,0,-0.3797,0],
+        "RHS": "ThreeBody"
+    }
+]
