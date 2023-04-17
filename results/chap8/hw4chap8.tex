@@ -1,0 +1,210 @@
+\documentclass{article}
+
+
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[fontset=mac]{ctex}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{mathrsfs}
+
+\title{Numerrical Analysis}
+\author{欧阳尚可  3190102458}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\subsection*{Ex 8.16}
+\indent 从(8.15a)很容易得到
+$$
+\textbf{x}_{*}=(D-\omega L)^{-1}[(1-\omega)D+\omega U]\textbf{x}^{(k)}+(D-\omega L)^{-1}\omega \textbf{b};
+$$
+从(8.15b)很容易得到
+$$
+\textbf{x}^{(k+1)}=(D-\omega U)^{-1}[(1-\omega)D+\omega L]\textbf{x}_{*}+(D-\omega U)^{-1}\omega \textbf{b};
+$$
+代入并化简得
+$$
+\textbf{x}^{k+1}=(D-\omega U)^{-1}[(1-\omega)D+\omega L](D-\omega L)^{-1}[(1-\omega)+\omega U]\textbf{x}^{(k)} \\
++\omega(2-\omega)(D-\omega U)^{-1}D(D-\omega L)^{-1}\textbf{b}
+$$
+
+\subsection*{Ex 8.22}
+\indent 若$I-A$奇异，则$\lambda = 1$为A的一个特征值，这与$\rho(A)<1$矛盾。
+
+\subsection*{Ex 8.38}
+\indent 一方面，已知	$\mathscr{I}\cup\mathscr{J}=\mathscr{W}=\{1,2,...,n\}$并且$\mathscr{I}\cap\mathscr{J}=\varnothing$，有$\forall i \in \mathscr{I},\forall j \in \mathscr{J},a_{i,j}=0$。因此我们可以找到一系列的行对换$P_{1},P_{2},...,P_{\vert \mathscr{I}\vert}$以及一系列的列变换$P^{'}_{1},P^{'}_{2},...,P^{'}_{\vert \mathscr{J}\vert}$其中$P_{1}$为第$i_{1}$与第1行的对换等；$P^{'}_{1}$为第$j_{1}$与第$i+1$列的对换等。使得
+
+\begin{equation*}
+P_{1}P_{2}...P_{\vert \mathscr{I}\vert}AP^{'}_{1}P^{'}_{2}...P^{'}_{\vert \mathscr{J}\vert}={
+\left [ \begin{array}{cc}
+A_{11} & \textbf{0} \\
+A_{21} & A_{22}
+\end{array}\right ]}
+\end{equation*}
+
+易知$P=P_{1}P_{2}...P_{\vert \mathscr{I}\vert}$以及$P^{'}=P^{'}_{1}P^{'}_{2}...P^{'}_{\vert \mathscr{J}\vert}$为置换矩阵，下面我们证明$PP^{'}=\textbf{I}$。考虑特殊情况$I=A$由于$\mathscr{I}\cup\mathscr{J}=\mathscr{W}=\{1,2,...,n\}$并且$\mathscr{I}\cap\mathscr{J}=\varnothing$，不难发现上述对换均是对零元素的交换，由此可知A为可约矩阵。
+
+\indent 另一方面，对于任意的置换矩阵P，我们可以找到一系列的对换矩阵$P_{1},P_{2},...,P_{r}$使得$P=P_{1}P_{2}...P_{r}$。由此可得
+
+\begin{equation*}
+PAP^{'}=P_{1}...P_{r}AP^{'}_{r}...P^{'}_{1}={
+\left [ \begin{array}{cc}
+A_{11} & \textbf{0} \\
+A_{21} & A_{22}
+\end{array}\right ]}
+\end{equation*}
+
+而我们已经有了$\mathscr{I}^{'}={1,2,...,r};\mathscr{J}^{'}={r+1,...,n}$有$\mathscr{I}^{'}\cup\mathscr{J}^{'}=\mathscr{W}=\{1,2,...,n\}$并且$\mathscr{I}^{'}\cap\mathscr{J}^{'}=\varnothing$，再经过对称的变换得到的$\mathscr{I},\mathscr{J}$仍然会有$\mathscr{I}\cup\mathscr{J}=\mathscr{W}=\{1,2,...,n\}$并且$\mathscr{I}\cap\mathscr{J}=\varnothing$。
+
+\subsection*{Ex 8.44}
+\indent 由于A为严格对角元占优矩阵或者不可约对角占优矩阵可知$A\textbf{x}=\textbf{b}$的Jacobi迭代收敛，即$\rho(T_{J})<1$。有
+$$
+T_{SOR}=I-\omega D^{-1}A = I -\omega D^{-1}(D-L-U) = (1-\omega)I+\omega D^{-1}(L+U)
+$$
+设$\lambda$为$D^{-1}(L+U)$的任意一个特征值，$\textbf{x}$为其对应的特征向量，有$\vert \lambda \vert < 1$，因此
+$$
+D^{-1}(L+U)\textbf{x} = \lambda \textbf{x}
+$$
+化简得
+$$
+[(1-\omega)I+\omega D^{-1}(L+U)]\textbf{x} = (1-\omega)\textbf{x}+\omega\lambda\textbf{x}=(1-\omega+\lambda\omega)\textbf{x}
+$$
+因此有$1-\omega+\lambda\omega$为$T_{SOR}$的一个特征值，由$\vert \lambda \vert < 1,0<\omega<1$知$\vert 1-\omega+\lambda\omega\vert<1$，再由任意性知$\rho(T_{SOR})<1$，因此JOR方法收敛。
+
+\subsection*{Ex 8.47}
+\indent 假设A为上三角矩阵
+
+\begin{equation*}
+	A=\left[
+	\begin{array}{cccc}	
+	a_{11} & a_{12} & \cdots & a_{1n} \\	
+	&a_{22} & \cdots &a_{2n} \\	
+	& & \ddots & \vdots \\	
+	&
+	& &a_{nn}	
+	\end{array}\right]
+\end{equation*}
+
+\begin{equation*}
+	A^{H}=\left[
+	\begin{array}{cccc}	
+	\bar{a}_{11} & & & \\	
+	\bar{a}_{21}&\bar{a}_{22} & & \\	
+	\vdots& \vdots & \ddots & \\	
+	\bar{a}_{n1}& \bar{a}_{n2} & \cdots &\bar{a}_{nn}	
+	\end{array}\right]
+\end{equation*}
+令$D=AA^{H}=diag(d_{1},...,d_{n}),D^{'}=diag(d^{'}_{1},d^{'}_{n})$，有$d_{i}=\sum_{j=i}^{n}\vert a_{ij}\vert^{2},d^{'}_{i}=\sum_{j=1}^{i}\vert a_{ij}\vert^{2}$，再由$A^{H}A=AA^{H}$得$d_{i}=d^{'}_{i}$可知$a_{ij}=0,i<j$。因此A为对角阵。
+
+\subsection*{Ex 8.57}
+\indent 对于第一个不等式有设$\rho(A)=\lambda_{i}$，对应的特征向量为$\textbf{x}_{i}$，有$\textbf{x}_{i}\in\mathbb{C}^{n},A\textbf{x}_{i}=\lambda_{i}\textbf{x}_{i}$。因此
+$$
+\mu_{A}(\textbf{x}_{i})=\frac{<A\textbf{x}_{i},\textbf{x}_{i}>}{<\textbf{x}_{i},\textbf{x}_{i}>}=\lambda_{i}
+$$
+因此$\upsilon(A)\ge\lambda_{i}=\rho(A)$\\
+\indent 对于第二个不等式有
+$$\exists \textbf{x} \in \mathbb{C}^{n},s.t.\upsilon(A)=\mu_{A}(\textbf{x})=\frac{<A\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\le \frac{\vert\vert A\textbf{x}\vert\vert_{2}}{\vert\vert\textbf{x}\vert\vert_{2}}\le \vert\vert A\vert\vert_{2}
+$$
+\indent 对于等式成立的条件有$(\textbf{x}_{1},...,\textbf{x}_{n})$为A的不同特征值对应的特征向量，有它们两两相互垂直，因此有它们构成了$\mathbb{C}^{n}$中的一组基且$<\textbf{x}_{i},\textbf{x}_{j}>=0$。对$\forall \textbf{x}\in \mathbb{C}^{n}$，能找到一组数使得$\textbf{x}=\sum_{i=1}^{n}a_{i}\textbf{x}_{i}$，因此有
+$$
+\frac{\vert\vert A\textbf{x}\vert\vert_{2}}{\vert\vert\textbf{x}\vert\vert_{2}}=\frac{\vert\vert\sum_{i=1}^{n}a_{i}\lambda_{i}\textbf{x}_{i}\vert\vert_{2}}{\vert\vert\sum_{i=1}^{n}a_{i}\textbf{x}_{i}\vert\vert_{2}}=\frac{(\sum_{i=1}^{n}\vert a_{i}\vert^{2}\vert\lambda_{i}\vert^{2}\vert\vert\textbf{x}_{i}\vert\vert_{2}^{2})^{\frac{1}{2}}}{(\sum_{i=1}^{n}\vert a_{i}\vert^{2}\vert\vert\textbf{x}_{i}\vert\vert_{2}^{2})\frac{1}{2}}\le\rho(A)
+$$
+因此等号成立。
+
+\subsection*{Ex 8.58}
+\indent 正定性：显然有$\upsilon(A)\ge0$，当$\upsilon(A)=0$当且仅当$\forall \textbf{x}\in\mathbb(C)^{n},<A\textbf{x},\textbf{x}>=0$，因此$A\textbf{x}=\textbf{0}$，所以$\textbf{A}=\textbf{0}$
+
+\indent 其次性：$\upsilon(\alpha A)=\max_{x\in\mathbb{C}^{n}}\vert\frac{<\alpha A\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\vert=\vert\alpha\vert\max_{x\in\mathbb{C}^{n}}\vert\frac{<A\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\vert=\vert\alpha\vert\upsilon(A)$
+
+\indent 三角不等式：$\upsilon(A+B)=\max_{x\in\mathbb{C}^{n}}\vert\frac{<(A+B)\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\vert=\max_{x\in\mathbb{C}^{n}}\vert\frac{<A\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}+\frac{<B\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\vert\le\max_{x\in\mathbb{C}^{n}}\vert\frac{<A\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\vert+\max_{x\in\mathbb{C}^{n}}\vert\frac{<B\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\vert=\upsilon(A)+\upsilon(B)$
+
+\indent 相容性：$\upsilon(AB)=\max_{x\in\mathbb{C}^{n}}\vert\frac{<AB\textbf{x},\textbf{x}>}{<\textbf{x},\textbf{x}>}\vert=\max_{x\in\mathbb{C}^{n}}\vert\frac{\vert\vert AB\textbf{x}\vert\vert_{2}}{\vert\vert\textbf{x}\vert\vert_{2}}\vert\le\upsilon(A)\frac{\vert\vert B\textbf{x}\vert\vert_{2}}{\vert\vert\textbf{x}\vert\vert_{2}}\le\upsilon(A)\upsilon(B)$
+
+\indent 综上是一个矩阵范数。
+
+\subsection*{Ex 8.61}
+\indent $<S\textbf{x},\textbf{x}>=\sum_{i=1}^{n}(S\textbf{x})_{i}\bar{x}_{i}=\sum_{i=1}^{n}(\sum_{j=1}^{n}s_{ij}x_{j})\bar{x}_{i}=-\sum_{j=1}^{n}(\sum_{i=1}^{n}\bar{s}_{ji}\bar{x}_{i})x_{j}=-\overline{<Sx,x>}$，因此$Re<S\textbf{x},\textbf{x}>=0$。
+
+\subsection*{Ex 8.71}
+\indent 由Thm 8.48得$A=U\Lambda U^{H}$，其中$\textbf{u}_{i}$为U的标准正交的特征向量，$\lambda_{i}$为相应的特征值。定义$R=span(\textbf{u}_{k},\textbf{u}_{k+1},...,\textbf{u}_{n})$，S为$\mathbb{C}^{n}$的一个秩为k的空间，有$dim(R\cap C)\ge 1$，易得
+$$
+\min_{\textbf{x}\in S\backslash\{\textbf{0\}}}\upsilon_{A}(\textbf{x})\le\min_{\textbf{x}\in S\cap R\backslash\{\textbf{0\}}}\upsilon_{A}(\textbf{x})\le\max_{\textbf{x}\in S\cap R\backslash\{\textbf{0\}}}\upsilon_{A}(\textbf{x})\le\max_{\textbf{x}\in  R\backslash\{\textbf{0\}}}\upsilon_{A}(\textbf{x})=\lambda_{k}
+$$
+因此我们得到了
+$$
+\lambda_{k}\ge\min_{dim(S)=k}\upsilon_{A}(\textbf{x})\
+$$
+再令$S=span(\textbf{u}_{1},...,\textbf{u}_{k})$即可得到等号。
+
+\subsection*{Ex 8.77}
+\indent 不妨设$\textbf{x}=(1,0,...,0)$，有$<A\textbf{x},\textbf{x}>=a_{11}$，故$a_{11}\in\mathbb{R}$；同理可得$a_{ii}\in\mathbb{R}$。
+再令$\textbf{x}=(1,1,0,...,0)$，有$<A\textbf{x},\textbf{x}>=a_{11}+a_{12}+a_{21}+a_{22}$，而$a_{11},a_{22}\in\mathbb{R}$，故$Im(a_{12})+Im(a_{21})=0$；再令$\textbf{x}=(1,i,0,...,0)$，有$<A\textbf{x},\textbf{x}>=a_{11}+ia_{12}-ia_{21}-a_{22}$，故$Re(a_{12})=Re(a_{21})$，综上得$a_{12}=\bar{a}_{21}$。同理易证得$a_{ij}=\bar{a}_{ji}$。故A为Hermit矩阵。
+
+\subsection*{Ex 8.88}
+\indent$\upsilon(A)\le\vert\vert A\vert\vert_{2}$已证，下证$\upsilon(A)\ge\frac{1}{2}\vert\vert A\vert\vert_{2}$。我们不失一般性的假设$\vert\vert \textbf{x}\vert\vert_{2}=1$。由Def 8.82我们可以得到$A=H+iS$，其中H为Hermite矩阵，S为反Hermite矩阵。我们有$\forall \textbf{x}\in \mathbb{C}^{n}，\vert\vert\textbf{x}\vert\vert_{2}=1$满足
+$$
+\vert<A\textbf{x},\textbf{x}>\vert=\vert<(H+iS)\textbf{x},\textbf{x}>\vert=\vert<H\textbf{x},\textbf{x}>+i<S\textbf{x},\textbf{x}>\vert
+$$
+$$
+=\sqrt{<H\textbf{x},\textbf{x}>^{2}+<S\textbf{x},\textbf{x}>^{2}}\ge\sqrt{(\frac{<H\textbf{x},\textbf{x}>+<S\textbf{x},\textbf{x}>}{2})^{2}}
+$$
+$$
+\ge\frac{1}{2}(\vert\vert H\textbf{x}\vert\vert_{2}+\vert\vert S\textbf{x}\vert\vert_{2})\ge\frac{1}{2}(\vert\vert (H+iS)\textbf{x}\vert\vert_{2})=\frac{1}{2}\vert\vert A\textbf{x}\vert\vert_{2}
+$$
+其中第二个三个等式由Hermite矩阵和反Hermite矩阵关于内积的性质得到，第一个不等号由二次函数$f(x)=x^{2}$的凸性得到，第二个不等式由绝对值的性质得到，第三个不等式由范数的定义得到。其他的关系都是简单的。由此我们得到$\upsilon(A)=\max_{\textbf{x}\in\mathbb{C}^{n}}\frac{<A\textbf{x},\textbf{x}>}{\textbf{x},\textbf{x}}\ge\max_{\textbf{x}\in\mathbb{C}^{n}}\frac{1}{2}\frac{\vert\vert A\textbf{x}\vert\vert_{2}}{\vert\vert\textbf{x}\vert\vert_{2}}=\frac{1}{2}\vert\vert A\vert\vert_{2}$
+
+\subsection*{Ex 8.97}
+\indent 对于AC中的任意一个元素$(AC)_{ij}=\sum_{	k=1}^{n}a_{ik}c_{kj}\le\sum_{	k=1}^{n}b_{ik}c_{kj}=(BC)_{ij}$。因此$AC\le BC$；同理可证得$CA\le CB$。
+
+\indent 考虑采用数学归纳法。当$n=1$时，等式显然成立，先假设当$n=k$时等式成立，即$A^{k}\le B^{k}$。则当$n=k+1$时有$(A^{k+1})_{ij}=\sum_{k=1}^{n}a_{ik}a_{kj}\le\sum_{k=1}^{n}b_{ik}b_{kj}=(B^{k+1})_{ij}$。有数学归纳法知不等式成立。
+
+\subsection*{Ex 8.109}
+\indent 依题意得
+
+\begin{equation*}
+D=\frac{1}{h^{2}}\left[
+	\begin{array}{ccc}	
+	2 & &  \\	
+	& \ddots & \\	
+	& & 2	
+	\end{array}\right]
+\end{equation*}
+
+\begin{equation*}
+L=\frac{1}{h^{2}}\left[
+	\begin{array}{cccc}	
+	0 & & & \\	
+	1 & 0 & & \\	
+	& \ddots & \ddots & \\
+	& & 1 & 0	
+	\end{array}\right]
+\end{equation*}
+
+\begin{equation*}
+M_{G,S}=\frac{1}{h^{2}}\left[
+	\begin{array}{cccc}	
+	2 & & & \\	
+	-1 & 2 & & \\	
+	& \ddots & \ddots & \\
+	& & -1 & 2	
+	\end{array}\right]
+\end{equation*}
+
+
+\begin{equation*}
+N=U=\frac{1}{h^{2}}\left[
+	\begin{array}{cccc}	
+	0 & 1 & & \\	
+	& \ddots& \ddots& \\	
+	&  & 0 & 1\\
+	& &  & 0	
+	\end{array}\right]
+\end{equation*}
+
+\indent 对于(RSM-1)和(RSM-4)这都是很容易得到的。$det(M)=(\frac{2}{h^{2}})^{n}\neq0$，由此(RSM-2)得证；通过观察上述矩阵不难发现主对角元的伴随矩阵的行列式均为正数，次对角元的行列式均为0，由此得到$M^{-1}\ge0$，(RSM-3)得证。由此可知$M_{G,S}$和N是A的一个正则分裂。再由Example 8.102知A是一个M-矩阵，故A可逆且$A^{-1}\ge0$，由Lemma 8.3和The 8.107知$\rho(T_{G,S})<1$。
+
+\end{document}
