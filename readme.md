@@ -9,3 +9,4 @@
 - FiniteDifference：有限差分法
 - Multigrid：多重网格法
 - IVPs：初值问题求解，包括线性多步法、Runge-Kutta法
+***项目仅仅因为申请需要开源，禁止利用该项目进行作业完成***
