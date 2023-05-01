@@ -26,4 +26,4 @@ Chap11 : The Method of Lines for the Heat Equation
 
 Chap12 : The MOL for the Advection Equation
 
- 
+delete the Chap10, Chap11, Chap12, in order to avoid copying the homework.
